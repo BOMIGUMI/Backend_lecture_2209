@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
             res.writeHead(200, {'Content-Type': 'image/jpg'});
             res.end(image);
         });
-        break
+        break;
     case '/audio':
         fs.readFile('media/file_example_MP3_700KB.mp3', (err, audio) => {
             res.writeHead(200, {'Content-Type': 'audio/mp3'});
@@ -32,9 +32,9 @@ const server = http.createServer((req, res) => {
     default:
         res.writeHead(404, {'Content-Type': 'text/html'});
         res.end();
-}}
-
+    }
+});
 
 server.listen(3000, () => {
     console.log('Server running at http://localhost:3000');
-    });
+});
